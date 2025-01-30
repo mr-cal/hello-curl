@@ -1,0 +1,35 @@
+name: curl-consumer
+version: "1.0"
+summary: cross-compiled curl
+description: cross-compiled curl
+grade: devel
+base: core24
+confinement: strict
+
+platforms:
+  armhf:
+    build-on: [amd64]
+    build-for: [armhf]
+
+lint:
+  ignore:
+    - library
+
+apps:
+  curl-consumer:
+    command: usr/bin/curl-consumer
+
+parts:
+  curl-consumer:
+    plugin: autotools
+    source: .
+    build-environment:
+      - PKG_CONFIG_PATH: "/usr/lib/arm-linux-gnueabihf/pkgconfig"
+    build-packages:
+      # build-essential, pkg-config, autoconf-archive
+      - libcurl4-openssl-dev:armhf
+    stage-packages:
+      - libcurl4t64:armhf
+    autotools-configure-parameters:
+      - --prefix=/usr
+      - --host=${CRAFT_ARCH_TRIPLET_BUILD_FOR}
