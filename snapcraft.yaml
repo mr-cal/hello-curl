@@ -3,8 +3,7 @@ version: "1.0"
 summary: cross-compiled curl consumer
 description: |
   A cross-compiled snap that uses libcurl. This exercises installing
-  libcurl-dev as a build package and staging libcurl, both from the armhf
-  repo.
+  libcurl-dev as a build package and staging libcurl, both from ubuntu-ports.
 grade: devel
 base: core24
 confinement: strict
