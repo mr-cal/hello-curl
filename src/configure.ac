@@ -1,4 +1,4 @@
-AC_INIT([curl-consumer], [1.0])
+AC_INIT([hello-curl], [1.0])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
 PKG_CHECK_MODULES(LIBCURL, libcurl)

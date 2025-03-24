@@ -1,6 +1,6 @@
-name: curl-consumer
+name: hello-curl
 version: "1.0"
-summary: cross-compiled curl consumer
+summary: cross-compiled app that uses curl
 description: |
   A cross-compiled snap that uses libcurl. This exercises installing
   libcurl-dev as a build package and staging libcurl, both from ubuntu-ports.
@@ -24,8 +24,8 @@ lint:
     - library
 
 apps:
-  curl-consumer:
-    command: usr/bin/curl-consumer
+  hello-curl:
+    command: usr/bin/hello-curl
 
 package-repositories:
   - type: apt
@@ -37,7 +37,7 @@ package-repositories:
     url: http://ports.ubuntu.com/ubuntu-ports
 
 parts:
-  curl-consumer:
+  hello-curl:
     plugin: autotools
     source: src
     build-environment:
